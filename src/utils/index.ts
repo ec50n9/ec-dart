@@ -1,5 +1,5 @@
-type CondType<T> = T | ((x: T) => boolean);
-type HandlerType<T, OUT> = (x: T) => OUT;
+type CondType<T> = number | string | boolean | RegExp | ((x: T) => boolean);
+type HandlerType<T, OUT> = (x?: T) => OUT;
 
 /**
  * 一个类似于 switch 的函数，根据条件匹配器，返回对应的处理函数
@@ -27,9 +27,9 @@ export const when = <IN = any, OUT = any>(
 
   if (allLiteral) {
     const map = new Map(conds as [string | number, HandlerType<IN, OUT>][]);
-    return (x: string | number) => map.get(x) || defaultHandler(x as IN);
+    return (x?: string | number) => map.get(x) || defaultHandler(x as IN);
   } else {
-    return (x: IN) => {
+    return (x?: IN) => {
       for (let [cond, handler] of conds) {
         if (
           (typeof cond === "boolean" && cond) ||

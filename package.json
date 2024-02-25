@@ -1,6 +1,6 @@
 {
   "name": "ec-dart",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "自用js工具包",
   "type": "module",
   "scripts": {
