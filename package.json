@@ -1,0 +1,28 @@
+{
+  "name": "ec-dart",
+  "version": "0.0.1",
+  "description": "自用js工具包",
+  "type": "module",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "build": "rollup --config",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ec50n9",
+  "license": "ISC",
+  "main": "./lib/bundle.esm.js",
+  "typings": "./lib/dist/utils/index.d.ts",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.12.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}
